@@ -143,8 +143,8 @@ load('Training_Data.mat')
 test = feat_disease;
 
 % classification model/models
-%result = svm(Train_Feat,Train_Label,test);
-result = Bag(Train_Feat,Train_Label,test);
+result = svm(Train_Feat,Train_Label,test);
+%result = Bag(Train_Feat,Train_Label,test);
 %disp(result);
 
 % Visualize Results
@@ -176,7 +176,8 @@ groups = ismember(Train_Label,0);
 cp = classperf(groups);
 
 % replace SVM with new model/models
-
+%bagStruct = bag(data(train,:),groups(train));
+%classes = predict(bagStruct,data(test,:));
 svmStruct = fitcsvm(data(train,:),groups(train));
 classes = predict(svmStruct,data(test,:));
 classperf(cp,classes,test);
@@ -184,4 +185,4 @@ Accuracy = cp.CorrectRate;
 Accuracy_Percent(i) = Accuracy.*100;
 end
 Max_Accuracy = max(Accuracy_Percent);
-sprintf('Accuracy of Linear Kernel with 500 iterations is: %g%%',Max_Accuracy)
+sprintf('Accuracy with 500 iterations is: %g%%',Max_Accuracy)
