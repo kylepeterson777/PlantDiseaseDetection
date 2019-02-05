@@ -1,5 +1,5 @@
 # PlantDiseaseDetection
-Detection of plant disease from images
+Detection of plant disease from images.
 
 Based on the initial framework provided by: 
 [1] Akhtar, Asma, et al. "Automated Plant Disease Analysis (APDA): Performance Comparison of Machine Learning Techniques." Frontiers of Information Technology (FIT), 2013 11th International Conference on. IEEE, 2013. 
